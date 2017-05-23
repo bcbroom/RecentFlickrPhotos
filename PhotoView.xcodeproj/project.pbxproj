@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		D35E017F1ED4A382001BF85B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E017E1ED4A382001BF85B /* main.m */; };
 		D35E01821ED4A382001BF85B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01811ED4A382001BF85B /* AppDelegate.m */; };
-		D35E01851ED4A382001BF85B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01841ED4A382001BF85B /* ViewController.m */; };
 		D35E01881ED4A382001BF85B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35E01861ED4A382001BF85B /* Main.storyboard */; };
 		D35E018A1ED4A382001BF85B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D35E01891ED4A382001BF85B /* Assets.xcassets */; };
 		D35E018D1ED4A382001BF85B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35E018B1ED4A382001BF85B /* LaunchScreen.storyboard */; };
+		D35E01961ED4A3C2001BF85B /* iTunesArtwork-512.png in Resources */ = {isa = PBXBuildFile; fileRef = D35E01941ED4A3C2001BF85B /* iTunesArtwork-512.png */; };
+		D35E01971ED4A3C2001BF85B /* iTunesArtwork-512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D35E01951ED4A3C2001BF85B /* iTunesArtwork-512@2x.png */; };
+		D35E019A1ED4A3F0001BF85B /* JsonRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01991ED4A3F0001BF85B /* JsonRequestHelper.m */; };
+		D35E019D1ED4A432001BF85B /* GetRecentPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E019C1ED4A432001BF85B /* GetRecentPhotos.m */; };
+		D35E01A01ED4A439001BF85B /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E019F1ED4A439001BF85B /* Photo.m */; };
+		D35E01A31ED4A444001BF85B /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01A21ED4A444001BF85B /* PhotosTableViewController.m */; };
+		D35E01A61ED4A451001BF85B /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01A51ED4A451001BF85B /* PhotoTableViewCell.m */; };
+		D35E01A91ED4A45D001BF85B /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01A81ED4A45D001BF85B /* PhotoDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +27,24 @@
 		D35E017E1ED4A382001BF85B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D35E01801ED4A382001BF85B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D35E01811ED4A382001BF85B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D35E01831ED4A382001BF85B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D35E01841ED4A382001BF85B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D35E01871ED4A382001BF85B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D35E01891ED4A382001BF85B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D35E018C1ED4A382001BF85B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D35E018E1ED4A382001BF85B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D35E01941ED4A3C2001BF85B /* iTunesArtwork-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork-512.png"; sourceTree = "<group>"; };
+		D35E01951ED4A3C2001BF85B /* iTunesArtwork-512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork-512@2x.png"; sourceTree = "<group>"; };
+		D35E01981ED4A3F0001BF85B /* JsonRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonRequestHelper.h; sourceTree = "<group>"; };
+		D35E01991ED4A3F0001BF85B /* JsonRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonRequestHelper.m; sourceTree = "<group>"; };
+		D35E019B1ED4A432001BF85B /* GetRecentPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetRecentPhotos.h; sourceTree = "<group>"; };
+		D35E019C1ED4A432001BF85B /* GetRecentPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetRecentPhotos.m; sourceTree = "<group>"; };
+		D35E019E1ED4A439001BF85B /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		D35E019F1ED4A439001BF85B /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		D35E01A11ED4A444001BF85B /* PhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewController.h; sourceTree = "<group>"; };
+		D35E01A21ED4A444001BF85B /* PhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewController.m; sourceTree = "<group>"; };
+		D35E01A41ED4A451001BF85B /* PhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewCell.h; sourceTree = "<group>"; };
+		D35E01A51ED4A451001BF85B /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
+		D35E01A71ED4A45D001BF85B /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		D35E01A81ED4A45D001BF85B /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +79,19 @@
 			children = (
 				D35E01801ED4A382001BF85B /* AppDelegate.h */,
 				D35E01811ED4A382001BF85B /* AppDelegate.m */,
-				D35E01831ED4A382001BF85B /* ViewController.h */,
-				D35E01841ED4A382001BF85B /* ViewController.m */,
 				D35E01861ED4A382001BF85B /* Main.storyboard */,
+				D35E01981ED4A3F0001BF85B /* JsonRequestHelper.h */,
+				D35E01991ED4A3F0001BF85B /* JsonRequestHelper.m */,
+				D35E019B1ED4A432001BF85B /* GetRecentPhotos.h */,
+				D35E019C1ED4A432001BF85B /* GetRecentPhotos.m */,
+				D35E019E1ED4A439001BF85B /* Photo.h */,
+				D35E019F1ED4A439001BF85B /* Photo.m */,
+				D35E01A11ED4A444001BF85B /* PhotosTableViewController.h */,
+				D35E01A21ED4A444001BF85B /* PhotosTableViewController.m */,
+				D35E01A41ED4A451001BF85B /* PhotoTableViewCell.h */,
+				D35E01A51ED4A451001BF85B /* PhotoTableViewCell.m */,
+				D35E01A71ED4A45D001BF85B /* PhotoDetailViewController.h */,
+				D35E01A81ED4A45D001BF85B /* PhotoDetailViewController.m */,
 				D35E01891ED4A382001BF85B /* Assets.xcassets */,
 				D35E018B1ED4A382001BF85B /* LaunchScreen.storyboard */,
 				D35E018E1ED4A382001BF85B /* Info.plist */,
@@ -74,6 +103,8 @@
 		D35E017D1ED4A382001BF85B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D35E01941ED4A3C2001BF85B /* iTunesArtwork-512.png */,
+				D35E01951ED4A3C2001BF85B /* iTunesArtwork-512@2x.png */,
 				D35E017E1ED4A382001BF85B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +172,8 @@
 				D35E018D1ED4A382001BF85B /* LaunchScreen.storyboard in Resources */,
 				D35E018A1ED4A382001BF85B /* Assets.xcassets in Resources */,
 				D35E01881ED4A382001BF85B /* Main.storyboard in Resources */,
+				D35E01971ED4A3C2001BF85B /* iTunesArtwork-512@2x.png in Resources */,
+				D35E01961ED4A3C2001BF85B /* iTunesArtwork-512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D35E01851ED4A382001BF85B /* ViewController.m in Sources */,
+				D35E019A1ED4A3F0001BF85B /* JsonRequestHelper.m in Sources */,
 				D35E01821ED4A382001BF85B /* AppDelegate.m in Sources */,
+				D35E01A91ED4A45D001BF85B /* PhotoDetailViewController.m in Sources */,
+				D35E01A31ED4A444001BF85B /* PhotosTableViewController.m in Sources */,
+				D35E01A61ED4A451001BF85B /* PhotoTableViewCell.m in Sources */,
+				D35E019D1ED4A432001BF85B /* GetRecentPhotos.m in Sources */,
+				D35E01A01ED4A439001BF85B /* Photo.m in Sources */,
 				D35E017F1ED4A382001BF85B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
