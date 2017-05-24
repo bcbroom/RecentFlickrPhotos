@@ -15,7 +15,7 @@
   if (self) {
     _photoID = json[@"id"];
     _title = json[@"title"];
-    _smallPhotoUrl = json[@"url_s"];
+    _smallPhotoUrl = json[@"url_q"];
     _largePhotoUrl = json[@"url_l"];
     _takenOnDate = json[@"datetaken"];
   }

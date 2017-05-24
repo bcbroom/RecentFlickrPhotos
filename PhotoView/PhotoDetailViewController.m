@@ -23,7 +23,27 @@
   [super viewDidLoad];
   
   self.titleLabel.text = self.photo.title;
-  self.takenOnDateLabel.text = self.photo.takenOnDate;
+  
+  NSDateFormatter *inputFormatter = [NSDateFormatter new];
+  inputFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+  inputFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+  NSDate *photoDate = [inputFormatter dateFromString:self.photo.takenOnDate];
+  
+  NSDateFormatter *outputFormatter = [NSDateFormatter new];
+  outputFormatter.dateFormat = @"MMM d, yyyy";
+  self.takenOnDateLabel.text = [outputFormatter stringFromDate:photoDate];
+  
+  NSURL *photoURL = [NSURL URLWithString:self.photo.largePhotoUrl];
+  NSURLSessionDataTask *imageDataTask = [[NSURLSession sharedSession] dataTaskWithURL:photoURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    if (!data) { return; }
+    UIImage *largeImage = [[UIImage alloc] initWithData:data];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      self.largeImageView.image = largeImage;
+    });
+    
+  }];
+  [imageDataTask resume];
 }
 
 

@@ -46,6 +46,22 @@
   
   Photo *photo = self.photos[indexPath.row];
   cell.titleLabel.text = photo.title;
+  cell.thumbnailImageView.image = [UIImage imageNamed:@"default"];
+  
+  NSURL *thumbnailURL = [NSURL URLWithString:photo.smallPhotoUrl];
+  NSURLSessionDataTask *thumbnailDataTask = [[NSURLSession sharedSession] dataTaskWithURL:thumbnailURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    if (!data) { return; }
+    
+    UIImage *thumbnailImage = [UIImage imageWithData:data];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      if (cell == [self.tableView cellForRowAtIndexPath:indexPath]) {
+        cell.thumbnailImageView.image = thumbnailImage;
+      }
+    });
+    
+  }];
+  [thumbnailDataTask resume];
   
   return cell;
 }
