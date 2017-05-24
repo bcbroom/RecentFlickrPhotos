@@ -10,4 +10,16 @@
 
 @implementation Photo
 
+- (instancetype)initWithJSON:(NSDictionary *)json {
+  self = [super init];
+  if (self) {
+    _photoID = json[@"id"];
+    _title = json[@"title"];
+    _smallPhotoUrl = json[@"url_s"];
+    _largePhotoUrl = json[@"url_l"];
+    _takenOnDate = json[@"datetaken"];
+  }
+  return self;
+}
+
 @end
