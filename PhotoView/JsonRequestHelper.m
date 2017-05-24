@@ -10,11 +10,19 @@
 
 @implementation JsonRequestHelper
 
-NSString *const APIBaseURL = @"https://example.com/api/v1/";
+// executes the failure block if
+//    1. NSURLSession returns an error - not sure when this happens
+//    2. API returns a status code >= 400
+//    3. Response data fails to convert to JSON
+// executes success block otherwise
+
+// parameter blocks are called on main thread, as they will usually have UI interactions
 
 + (void)getJsonWithRequest:(NSURLRequest *)request success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock {
   
   NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    
+    // OS error
     
     if (error) {
       NSLog(@"%@", [error localizedDescription]);
@@ -25,17 +33,21 @@ NSString *const APIBaseURL = @"https://example.com/api/v1/";
       return;
     }
     
+    // API returns error code
+    
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-    if (httpResponse.statusCode < 200 || httpResponse.statusCode >= 300) {
+    if (httpResponse.statusCode >= 400) {
       NSLog(@"Locations returned status: %ld", (long)httpResponse.statusCode);
       NSString *errorDescription = [NSString stringWithFormat:@"Server returned an error for endpoint %@", request.URL];
-      NSError *httpError = [NSError errorWithDomain:@"us.foodrescue.APIRequestErrorDomain" code:httpResponse.statusCode userInfo:@{ NSLocalizedDescriptionKey : errorDescription }];
+      NSError *httpError = [NSError errorWithDomain:@"net.learningobjective.APIRequestErrorDomain" code:httpResponse.statusCode userInfo:@{ NSLocalizedDescriptionKey : errorDescription }];
       
       if (failureBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{failureBlock(httpError);});
       }
       return;
     }
+    
+    // convert response data to JSON
     
     NSError *jsonError = nil;
     NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
@@ -50,7 +62,7 @@ NSString *const APIBaseURL = @"https://example.com/api/v1/";
       return;
     }
     
-    // json here
+    // valid JSON at this point
     if (successBlock) {
       dispatch_async(dispatch_get_main_queue(), ^{successBlock(json);});
     }
@@ -60,62 +72,4 @@ NSString *const APIBaseURL = @"https://example.com/api/v1/";
   
 }
 
-+ (void)getJSONFromURL:(NSURL *)url success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock {
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  [JsonRequestHelper getJsonWithRequest:request success:successBlock failure:failureBlock];
-}
-
-+ (void)postJSONToURL:(NSURL *)url withDictionary:(NSDictionary *)info success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock {
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  request.HTTPMethod = @"POST";
-  [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
-  
-  NSError *jsonEncodingError = nil;
-  NSData *jsonData = [NSJSONSerialization dataWithJSONObject:info options:kNilOptions error:&jsonEncodingError];
-  
-  if (jsonEncodingError) {
-    dispatch_async(dispatch_get_main_queue(), ^{failureBlock(jsonEncodingError);});
-    return;
-  }
-  
-  request.HTTPBody = jsonData;
-  
-  [JsonRequestHelper getJsonWithRequest:request success:successBlock failure:failureBlock];
-}
-
-+ (void)putJSONToURL:(NSURL *)url withDictionary:(NSDictionary *)info success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock {
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  request.HTTPMethod = @"PUT";
-  [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
-  
-  NSError *jsonEncodingError = nil;
-  NSData *jsonData = [NSJSONSerialization dataWithJSONObject:info options:kNilOptions error:&jsonEncodingError];
-  
-  if (jsonEncodingError) {
-    dispatch_async(dispatch_get_main_queue(), ^{failureBlock(jsonEncodingError);});
-    return;
-  }
-  
-  request.HTTPBody = jsonData;
-  
-  [JsonRequestHelper getJsonWithRequest:request success:successBlock failure:failureBlock];
-}
-
-+ (void)deleteJSONToURL:(NSURL *)url withDictionary:(NSDictionary *)info success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock {
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  request.HTTPMethod = @"DELETE";
-  [request addValue:@"application/json" forHTTPHeaderField:@"content-type"];
-  
-  NSError *jsonEncodingError = nil;
-  NSData *jsonData = [NSJSONSerialization dataWithJSONObject:info options:kNilOptions error:&jsonEncodingError];
-  
-  if (jsonEncodingError) {
-    dispatch_async(dispatch_get_main_queue(), ^{failureBlock(jsonEncodingError);});
-    return;
-  }
-  
-  request.HTTPBody = jsonData;
-  
-  [JsonRequestHelper getJsonWithRequest:request success:successBlock failure:failureBlock];
-}
 @end

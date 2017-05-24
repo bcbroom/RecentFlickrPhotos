@@ -10,4 +10,6 @@
 
 @interface GetRecentPhotos : NSObject
 
++ (void)fetchWithSuccess:(void (^)(NSArray *photos))successBlock failure:(void (^)(NSError *error))failureBlock;
+
 @end

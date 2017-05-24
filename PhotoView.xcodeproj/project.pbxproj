@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30B3E8B1ED4D78F0029EB78 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */; };
+		D30B3EBF1ED604050029EB78 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = D30B3EBE1ED604050029EB78 /* default.png */; };
 		D35E017F1ED4A382001BF85B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E017E1ED4A382001BF85B /* main.m */; };
 		D35E01821ED4A382001BF85B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01811ED4A382001BF85B /* AppDelegate.m */; };
 		D35E01881ED4A382001BF85B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35E01861ED4A382001BF85B /* Main.storyboard */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D30B3E891ED4D78F0029EB78 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRouter.h; sourceTree = "<group>"; };
+		D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRouter.m; sourceTree = "<group>"; };
+		D30B3EBE1ED604050029EB78 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		D35E017A1ED4A382001BF85B /* PhotoView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35E017E1ED4A382001BF85B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D35E01801ED4A382001BF85B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +87,8 @@
 				D35E01861ED4A382001BF85B /* Main.storyboard */,
 				D35E01981ED4A3F0001BF85B /* JsonRequestHelper.h */,
 				D35E01991ED4A3F0001BF85B /* JsonRequestHelper.m */,
+				D30B3E891ED4D78F0029EB78 /* APIRouter.h */,
+				D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */,
 				D35E019B1ED4A432001BF85B /* GetRecentPhotos.h */,
 				D35E019C1ED4A432001BF85B /* GetRecentPhotos.m */,
 				D35E019E1ED4A439001BF85B /* Photo.h */,
@@ -103,6 +110,7 @@
 		D35E017D1ED4A382001BF85B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D30B3EBE1ED604050029EB78 /* default.png */,
 				D35E01941ED4A3C2001BF85B /* iTunesArtwork-512.png */,
 				D35E01951ED4A3C2001BF85B /* iTunesArtwork-512@2x.png */,
 				D35E017E1ED4A382001BF85B /* main.m */,
@@ -170,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35E018D1ED4A382001BF85B /* LaunchScreen.storyboard in Resources */,
+				D30B3EBF1ED604050029EB78 /* default.png in Resources */,
 				D35E018A1ED4A382001BF85B /* Assets.xcassets in Resources */,
 				D35E01881ED4A382001BF85B /* Main.storyboard in Resources */,
 				D35E01971ED4A3C2001BF85B /* iTunesArtwork-512@2x.png in Resources */,
@@ -189,6 +198,7 @@
 				D35E01A91ED4A45D001BF85B /* PhotoDetailViewController.m in Sources */,
 				D35E01A31ED4A444001BF85B /* PhotosTableViewController.m in Sources */,
 				D35E01A61ED4A451001BF85B /* PhotoTableViewCell.m in Sources */,
+				D30B3E8B1ED4D78F0029EB78 /* APIRouter.m in Sources */,
 				D35E019D1ED4A432001BF85B /* GetRecentPhotos.m in Sources */,
 				D35E01A01ED4A439001BF85B /* Photo.m in Sources */,
 				D35E017F1ED4A382001BF85B /* main.m in Sources */,
@@ -350,6 +360,7 @@
 				D35E01931ED4A382001BF85B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

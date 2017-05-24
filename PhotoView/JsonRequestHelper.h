@@ -10,12 +10,8 @@
 
 @interface JsonRequestHelper : NSObject
 
-extern NSString *const APIBaseURL;
+
 
 + (void)getJsonWithRequest:(NSURLRequest *)request success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock;
-+ (void)getJSONFromURL:(NSURL *)url success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock;
-+ (void)postJSONToURL:(NSURL *)url withDictionary:(NSDictionary *)info success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock;
-+ (void)putJSONToURL:(NSURL *)url withDictionary:(NSDictionary *)info success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock;
-+ (void)deleteJSONToURL:(NSURL *)url withDictionary:(NSDictionary *)info success:(void (^)(id json))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 @end
