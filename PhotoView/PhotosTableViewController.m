@@ -7,49 +7,49 @@
 //
 
 #import "PhotosTableViewController.h"
+#import "Photo.h"
+#import "GetRecentPhotos.h"
+#import "PhotoTableViewCell.h"
+#import "PhotoDetailViewController.h"
 
 @interface PhotosTableViewController ()
+
+@property (copy, nonatomic) NSArray *photos;
 
 @end
 
 @implementation PhotosTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super viewDidLoad];
+  
+  [GetRecentPhotos fetchWithSuccess:^(NSArray *photos) {
+    NSLog(@"Fetched photos");
+    self.photos = photos;
+    [self.tableView reloadData];
+  } failure:^(NSError *error) {
+    NSLog(@"Error: %@", [error localizedDescription]);
+  }];
+  
+  // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+  return self.photos.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+  PhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
+  
+  Photo *photo = self.photos[indexPath.row];
+  cell.titleLabel.text = photo.title;
+  
+  return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -85,14 +85,13 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  if ([segue.identifier isEqualToString:@"ShowDetailSegue"]) {
+    PhotoDetailViewController *toVC = segue.destinationViewController;
+    toVC.photo = self.photos[self.tableView.indexPathForSelectedRow.row];
+  }
 }
-*/
 
 @end
