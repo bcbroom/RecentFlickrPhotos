@@ -65,6 +65,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D30B3EC41ED683440029EB78 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D35E01981ED4A3F0001BF85B /* JsonRequestHelper.h */,
+				D35E01991ED4A3F0001BF85B /* JsonRequestHelper.m */,
+				D30B3E891ED4D78F0029EB78 /* APIRouter.h */,
+				D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */,
+				D35E019B1ED4A432001BF85B /* GetRecentPhotos.h */,
+				D35E019C1ED4A432001BF85B /* GetRecentPhotos.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		D30B3EC51ED6834E0029EB78 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D35E019E1ED4A439001BF85B /* Photo.h */,
+				D35E019F1ED4A439001BF85B /* Photo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D30B3EC61ED683560029EB78 /* Photo List */ = {
+			isa = PBXGroup;
+			children = (
+				D35E01A11ED4A444001BF85B /* PhotosTableViewController.h */,
+				D35E01A21ED4A444001BF85B /* PhotosTableViewController.m */,
+				D35E01A41ED4A451001BF85B /* PhotoTableViewCell.h */,
+				D35E01A51ED4A451001BF85B /* PhotoTableViewCell.m */,
+			);
+			name = "Photo List";
+			sourceTree = "<group>";
+		};
+		D30B3EC71ED6835E0029EB78 /* Photo Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D35E01A71ED4A45D001BF85B /* PhotoDetailViewController.h */,
+				D35E01A81ED4A45D001BF85B /* PhotoDetailViewController.m */,
+			);
+			name = "Photo Detail";
+			sourceTree = "<group>";
+		};
 		D35E01711ED4A382001BF85B = {
 			isa = PBXGroup;
 			children = (
@@ -87,20 +129,10 @@
 				D35E01801ED4A382001BF85B /* AppDelegate.h */,
 				D35E01811ED4A382001BF85B /* AppDelegate.m */,
 				D35E01861ED4A382001BF85B /* Main.storyboard */,
-				D35E01981ED4A3F0001BF85B /* JsonRequestHelper.h */,
-				D35E01991ED4A3F0001BF85B /* JsonRequestHelper.m */,
-				D30B3E891ED4D78F0029EB78 /* APIRouter.h */,
-				D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */,
-				D35E019B1ED4A432001BF85B /* GetRecentPhotos.h */,
-				D35E019C1ED4A432001BF85B /* GetRecentPhotos.m */,
-				D35E019E1ED4A439001BF85B /* Photo.h */,
-				D35E019F1ED4A439001BF85B /* Photo.m */,
-				D35E01A11ED4A444001BF85B /* PhotosTableViewController.h */,
-				D35E01A21ED4A444001BF85B /* PhotosTableViewController.m */,
-				D35E01A41ED4A451001BF85B /* PhotoTableViewCell.h */,
-				D35E01A51ED4A451001BF85B /* PhotoTableViewCell.m */,
-				D35E01A71ED4A45D001BF85B /* PhotoDetailViewController.h */,
-				D35E01A81ED4A45D001BF85B /* PhotoDetailViewController.m */,
+				D30B3EC41ED683440029EB78 /* Network */,
+				D30B3EC51ED6834E0029EB78 /* Models */,
+				D30B3EC61ED683560029EB78 /* Photo List */,
+				D30B3EC71ED6835E0029EB78 /* Photo Detail */,
 				D35E01891ED4A382001BF85B /* Assets.xcassets */,
 				D35E018B1ED4A382001BF85B /* LaunchScreen.storyboard */,
 				D35E018E1ED4A382001BF85B /* Info.plist */,
