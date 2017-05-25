@@ -14,3 +14,7 @@ One difficulty I had with this type of example is, for the Flickr API, there isn
 There is a basic image cache provided by the built in NSURLSession system, and I have not added any additional caching. This would be an important consideration for this kind of app in a production setting.
 
 Finally, I did not implement paging of the API records, and so am only displaying the first 100 items. In a production app, what I typically do is download the first two pages, then when the user scrolls into the second page of results, download the third and append it to the stored items. For large data sets, this requires purging of earlier records. 
+
+###Update: 25 May 2017
+
+Implemented a basic paging system with a cell in the TableView that says "loading". When that cell is displayed, the next page of results is fetched and appended to the existing data.
