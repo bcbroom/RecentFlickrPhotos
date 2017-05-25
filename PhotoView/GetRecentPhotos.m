@@ -13,9 +13,9 @@
 
 @implementation GetRecentPhotos
 
-+ (void)fetchWithSuccess:(void (^)(NSArray *photos))successBlock failure:(void (^)(NSError *error))failureBlock {
++ (void)fetchPage:(NSInteger)page success:(void (^)(NSArray *photos))successBlock failure:(void (^)(NSError *error))failureBlock {
   
-  NSURLRequest *request = [APIRouter recentPhotosRequest];
+  NSURLRequest *request = [APIRouter recentPhotosRequestForPage:page];
   
   [JsonRequestHelper getJsonWithRequest:request success:^(id json) {
     

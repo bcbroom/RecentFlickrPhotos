@@ -10,6 +10,6 @@
 
 @interface APIRouter : NSObject
 
-+ (NSURLRequest *)recentPhotosRequest;
++ (NSURLRequest *)recentPhotosRequestForPage:(NSInteger)page;
 
 @end

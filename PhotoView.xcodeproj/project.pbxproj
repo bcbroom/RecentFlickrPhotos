@@ -10,6 +10,7 @@
 		D30B3E8B1ED4D78F0029EB78 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */; };
 		D30B3EC11ED6248E0029EB78 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = D30B3EC01ED6248E0029EB78 /* default.png */; };
 		D30B3EC31ED681EE0029EB78 /* invalid.png in Resources */ = {isa = PBXBuildFile; fileRef = D30B3EC21ED681EE0029EB78 /* invalid.png */; };
+		D30B3ECA1ED77E290029EB78 /* LoadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D30B3EC91ED77E290029EB78 /* LoadingTableViewCell.m */; };
 		D35E017F1ED4A382001BF85B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E017E1ED4A382001BF85B /* main.m */; };
 		D35E01821ED4A382001BF85B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01811ED4A382001BF85B /* AppDelegate.m */; };
 		D35E01881ED4A382001BF85B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35E01861ED4A382001BF85B /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 		D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRouter.m; sourceTree = "<group>"; };
 		D30B3EC01ED6248E0029EB78 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		D30B3EC21ED681EE0029EB78 /* invalid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = invalid.png; sourceTree = "<group>"; };
+		D30B3EC81ED77E290029EB78 /* LoadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingTableViewCell.h; sourceTree = "<group>"; };
+		D30B3EC91ED77E290029EB78 /* LoadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingTableViewCell.m; sourceTree = "<group>"; };
 		D35E017A1ED4A382001BF85B /* PhotoView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35E017E1ED4A382001BF85B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D35E01801ED4A382001BF85B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				D35E01A21ED4A444001BF85B /* PhotosTableViewController.m */,
 				D35E01A41ED4A451001BF85B /* PhotoTableViewCell.h */,
 				D35E01A51ED4A451001BF85B /* PhotoTableViewCell.m */,
+				D30B3EC81ED77E290029EB78 /* LoadingTableViewCell.h */,
+				D30B3EC91ED77E290029EB78 /* LoadingTableViewCell.m */,
 			);
 			name = "Photo List";
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			files = (
 				D35E019A1ED4A3F0001BF85B /* JsonRequestHelper.m in Sources */,
 				D35E01821ED4A382001BF85B /* AppDelegate.m in Sources */,
+				D30B3ECA1ED77E290029EB78 /* LoadingTableViewCell.m in Sources */,
 				D35E01A91ED4A45D001BF85B /* PhotoDetailViewController.m in Sources */,
 				D35E01A31ED4A444001BF85B /* PhotosTableViewController.m in Sources */,
 				D35E01A61ED4A451001BF85B /* PhotoTableViewCell.m in Sources */,

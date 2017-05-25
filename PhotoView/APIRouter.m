@@ -30,13 +30,15 @@ static NSString *const APIBaseURL = @"https://api.flickr.com/services/";
   return components;
 }
 
-+ (NSURLRequest *)recentPhotosRequest {
++ (NSURLRequest *)recentPhotosRequestForPage:(NSInteger)page {
   
   NSURLComponents *components = [APIRouter baseComponents];
   
+  
   NSURLQueryItem *methodItem = [NSURLQueryItem queryItemWithName:@"method" value:@"flickr.photos.getRecent"];
   NSURLQueryItem *extraItem = [NSURLQueryItem queryItemWithName:@"extras" value:@"url_q,url_l,date_taken"];
-  components.queryItems = [components.queryItems arrayByAddingObjectsFromArray:@[methodItem, extraItem]];
+  NSURLQueryItem *pageItem = [NSURLQueryItem queryItemWithName:@"page" value:[NSString stringWithFormat:@"%ld", (long)page]];
+  components.queryItems = [components.queryItems arrayByAddingObjectsFromArray:@[methodItem, extraItem, pageItem]];
   
   return [NSMutableURLRequest requestWithURL:components.URL];
 }

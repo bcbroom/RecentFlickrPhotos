@@ -10,11 +10,16 @@
 #import "Photo.h"
 #import "GetRecentPhotos.h"
 #import "PhotoTableViewCell.h"
+#import "LoadingTableViewCell.h"
 #import "PhotoDetailViewController.h"
 
 @interface PhotosTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *photos;
+
+@property (assign, nonatomic) NSInteger currentPage;
+@property (assign, nonatomic) BOOL isLoadingNextPage;
+@property (assign, nonatomic) BOOL onLastPage;
 
 @end
 
@@ -23,8 +28,15 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [GetRecentPhotos fetchWithSuccess:^(NSArray *photos) {
+  self.currentPage = 1;
+  self.onLastPage = YES;
+  
+  [GetRecentPhotos fetchPage:self.currentPage success:^(NSArray *photos) {
+    
+    self.onLastPage = (photos.count == 0) ? YES : NO;
+    
     NSLog(@"Fetched photos");
+    
     self.photos = [photos mutableCopy];
     [self.tableView reloadData];
   } failure:^(NSError *error) {
@@ -126,11 +138,44 @@
 
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  if (section == 1) {
+    if (self.onLastPage) {
+      return 0;
+    } else {
+      return 1;
+    }
+  }
+  
   return self.photos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  if (indexPath.section == 1) {
+    LoadingTableViewCell *loadingCell = [tableView dequeueReusableCellWithIdentifier:@"LoadingCell" forIndexPath:indexPath];
+    [loadingCell.spinner startAnimating];
+    
+    [GetRecentPhotos fetchPage:self.currentPage+1 success:^(NSArray *photos) {
+      [loadingCell.spinner stopAnimating];
+      self.currentPage += 1;
+      self.onLastPage = (photos.count == 0) ? YES : NO;
+      
+      NSLog(@"Fetched photos");
+      
+      [self.photos addObjectsFromArray:photos];
+      [self.tableView reloadData];
+    } failure:^(NSError *error) {
+      NSLog(@"Error: %@", [error localizedDescription]);
+    }];
+    
+    return loadingCell;
+  }
+  
   PhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
   
   Photo *photo = self.photos[indexPath.row];
