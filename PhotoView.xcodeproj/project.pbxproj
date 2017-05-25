@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D30B3E8B1ED4D78F0029EB78 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */; };
 		D30B3EC11ED6248E0029EB78 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = D30B3EC01ED6248E0029EB78 /* default.png */; };
+		D30B3EC31ED681EE0029EB78 /* invalid.png in Resources */ = {isa = PBXBuildFile; fileRef = D30B3EC21ED681EE0029EB78 /* invalid.png */; };
 		D35E017F1ED4A382001BF85B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E017E1ED4A382001BF85B /* main.m */; };
 		D35E01821ED4A382001BF85B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E01811ED4A382001BF85B /* AppDelegate.m */; };
 		D35E01881ED4A382001BF85B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35E01861ED4A382001BF85B /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		D30B3E891ED4D78F0029EB78 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRouter.h; sourceTree = "<group>"; };
 		D30B3E8A1ED4D78F0029EB78 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRouter.m; sourceTree = "<group>"; };
 		D30B3EC01ED6248E0029EB78 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		D30B3EC21ED681EE0029EB78 /* invalid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = invalid.png; sourceTree = "<group>"; };
 		D35E017A1ED4A382001BF85B /* PhotoView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35E017E1ED4A382001BF85B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D35E01801ED4A382001BF85B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D30B3EC01ED6248E0029EB78 /* default.png */,
+				D30B3EC21ED681EE0029EB78 /* invalid.png */,
 				D35E01941ED4A3C2001BF85B /* iTunesArtwork-512.png */,
 				D35E01951ED4A3C2001BF85B /* iTunesArtwork-512@2x.png */,
 				D35E017E1ED4A382001BF85B /* main.m */,
@@ -179,6 +182,7 @@
 			files = (
 				D35E018D1ED4A382001BF85B /* LaunchScreen.storyboard in Resources */,
 				D35E018A1ED4A382001BF85B /* Assets.xcassets in Resources */,
+				D30B3EC31ED681EE0029EB78 /* invalid.png in Resources */,
 				D35E01881ED4A382001BF85B /* Main.storyboard in Resources */,
 				D35E01971ED4A3C2001BF85B /* iTunesArtwork-512@2x.png in Resources */,
 				D30B3EC11ED6248E0029EB78 /* default.png in Resources */,

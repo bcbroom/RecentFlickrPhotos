@@ -33,6 +33,10 @@
   outputFormatter.dateFormat = @"MMM d, yyyy";
   self.takenOnDateLabel.text = [outputFormatter stringFromDate:photoDate];
   
+  if (self.photo.largePhotoUrl == nil) {
+    self.largeImageView.image = [UIImage imageNamed:@"invalid"];
+  }
+  
   NSURL *photoURL = [NSURL URLWithString:self.photo.largePhotoUrl];
   NSURLSessionDataTask *imageDataTask = [[NSURLSession sharedSession] dataTaskWithURL:photoURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
     if (!data) { return; }

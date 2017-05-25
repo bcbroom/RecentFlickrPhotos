@@ -137,6 +137,10 @@
   cell.titleLabel.text = photo.title;
   cell.thumbnailImageView.image = [UIImage imageNamed:@"default"];
   
+  if (photo.smallPhotoUrl == nil) {
+    cell.thumbnailImageView.image = [UIImage imageNamed:@"invalid"];
+  }
+  
   NSURL *thumbnailURL = [NSURL URLWithString:photo.smallPhotoUrl];
   NSURLSessionDataTask *thumbnailDataTask = [[NSURLSession sharedSession] dataTaskWithURL:thumbnailURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
     if (!data) { return; }
