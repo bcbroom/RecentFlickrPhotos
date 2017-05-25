@@ -22,7 +22,7 @@ static NSString *const APIBaseURL = @"https://api.flickr.com/services/";
   
   components.path = @"/services/rest";
   
-  NSURLQueryItem *keyItem = [NSURLQueryItem queryItemWithName:@"api_key" value:@"89d67241ccf87a60cf2b2b11b6217741"];
+  NSURLQueryItem *keyItem = [NSURLQueryItem queryItemWithName:@"api_key" value:@"6933b25fd227586003ecc5001ff16b95"];
   NSURLQueryItem *formatItem = [NSURLQueryItem queryItemWithName:@"format" value:@"json"];
   NSURLQueryItem *callbackItem = [NSURLQueryItem queryItemWithName:@"nojsoncallback" value:@"1"];
   components.queryItems = @[ keyItem, formatItem, callbackItem];
